@@ -148,7 +148,7 @@ class logging:
 
             # logging.info("In exit_log function")
             # if log_json_out:
-            #     logging.info("Sending data to COSMOS Appliance")
+            #     logging.info("Sending ")
             #     logging.info("URL: %s" % log_json_out)
             #     logging.info("Data: %s" % json.dumps(logs))
             #     logs["info"] = []
