@@ -1,0 +1,9 @@
+
+{
+  "csv" : {
+    "headers" : ["ProductID", "Name", "Price", "InStock"]
+  },
+  "txt": {
+     "headers" : []
+  }
+}
