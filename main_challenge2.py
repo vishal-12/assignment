@@ -10,7 +10,7 @@ from logger.logger import logging
 import os
 from challenge2.challenge2 import Challenge2
 
-############## Logging
+############## Logging################
 logging = logging()
 logging.set_log_file("")
 current_dir = os.path.dirname(os.path.abspath(__file__))

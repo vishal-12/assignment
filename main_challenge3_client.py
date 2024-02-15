@@ -6,7 +6,7 @@
     python main_challenge3_client.py --json_data '{"name": "Aman", "surname": "Sharma", "email": "aman.sharma@example.com", "phone": "1234567890"}' --task_identifier 'register'
 
     Fetch User -
-    python main_challenge3_client.py --json_data '{"name": "Aman", "surname": "Sharma", "email": "aman.sharma@example.com", "phone": "1234567890"}' --task_identifier 'fetch'
+    python main_challenge3_client.py --task_identifier 'fetch'
 
     Delete User -
     python main_challenge3_client.py --json_data '{"name": "Aman", "surname": "Sharma", "email": "aman.sharma@example.com", "phone": "1234567890"}' --task_identifier 'delete'
@@ -31,7 +31,7 @@ if __name__ == "__main__":
     logger = logging()
     logger.set_log_file("")
     parser = argparse.ArgumentParser(description="Client to Server")
-    parser.add_argument("--json_data", help="json_data", required=True)
+    parser.add_argument("--json_data", help="json_data", required=False)
     parser.add_argument("--task_identifier", help="Path to the CSV file", required=True)
 
     args = parser.parse_args()
@@ -40,23 +40,24 @@ if __name__ == "__main__":
     client = Client('127.0.0.1', 12345)
 
     #load json
-    if args.json_data =="":
-        logging.error("Please Provide correct, --help --json_data ",100,ex=True)
-    data = json.loads(args.json_data)
-    name = data.get("name",None)
-    if name is None:
-        logging.error("Name field can't be None, --help --json_data ", 100, ex=True)
-    surname = data.get("surname", None)
-    if surname is None:
-        logging.error("Surname field can't be None, --help --json_data ", 100, ex=True)
+    if task_identifier!="fetch":
+        if args.json_data =="":
+            logging.error("Please Provide correct, --help --json_data ",100,ex=True)
+        data = json.loads(args.json_data)
+        name = data.get("name",None)
+        if name is None:
+            logging.error("Name field can't be None, --help --json_data ", 100, ex=True)
+        surname = data.get("surname", None)
+        if surname is None:
+            logging.error("Surname field can't be None, --help --json_data ", 100, ex=True)
 
-    email = data.get("email", None)
-    if email is None:
-        logging.error("Email field can't be None, --help --json_data ", 100, ex=True)
+        email = data.get("email", None)
+        if email is None:
+            logging.error("Email field can't be None, --help --json_data ", 100, ex=True)
 
-    phone = data.get("phone", None)
-    if phone is None:
-        logging.error("phone field can't be None, --help --json_data ", 100, ex=True)
+        phone = data.get("phone", None)
+        if phone is None:
+            logging.error("phone field can't be None, --help --json_data ", 100, ex=True)
 
     if task_identifier is None:
         logging.error("task_identifier field can't be None, --help --json_data ", 100, ex=True)

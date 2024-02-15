@@ -17,10 +17,9 @@
     PARMA --csv_out_to_console
     Show the txt output of each line on the console
 
-    Update the token manually in config file that token will be used for calling all methods and you can prepare your data to test the test cases like name token email etc.
+    Please note that this will create the log file in the log directory with latest date and time
 
     Example - python main_challenge1.py --text_file_path "<>" --csv_file_path "<path>"  --only_txt --only_csv --csv_out_to_console --txt_out_to_console
-
 '''
 
 import argparse
@@ -47,42 +46,43 @@ if __name__ == "__main__":
     parser.add_argument("--csv_file_path", help="Path to the CSV file",required=False)
     parser.add_argument("--csv_out_to_console", help="Show Output to Console", action="store_true",default=False)
     parser.add_argument("--txt_out_to_console", help="Show Output to Console",  action="store_true",default=False)
-    parser.add_argument("--only_csv", help="Show Output to Console", action="store_true", default=False)
-    parser.add_argument("--only_txt", help="Show Output to Console", action="store_true", default=False)
     args = parser.parse_args()
 
-    #Get Default sorurce file path
-    getCsvPath()
 
     logging.info("Challenge 01 Started")
     if args.text_file_path:
         text_file_path = args.text_file_path
     else:
-        text_file_path = text_file_path
+        text_file_path = None
 
     if args.csv_file_path:
         csv_file_path = args.csv_file_path
     else:
-        csv_file_path=csv_file_path
+        csv_file_path=None
 
     #Get Config FILE
     current_dir = os.path.dirname(os.path.abspath(__file__))
     config_file = os.path.join(current_dir, "config", "config.json")
 
-    if args.only_csv:
-        fileType = "csv"
-    elif args.only_txt:
-        fileType = "txt"
-    else:
-        fileType = "None"
+    if (args.text_file_path == "" or args.text_file_path is None) and (args.csv_file_path == "" or args.csv_file_path is None):
+        logging.info("text_file_path and csv_file_path is empty, taking files from src")
+
+        # Get Default sorurce file path
+        getCsvPath()
+        text_file_path = text_file_path
+        csv_file_path = csv_file_path
 
     # Create Object
-    extractor = Extractor(csv_file_path=csv_file_path,text_file_path=text_file_path,logging=logging,config=config_file,fileType=fileType)
-    extractor.combinedRun()
-    if args.csv_out_to_console is True or args.only_csv is True:
-        extractor.outputToConsole(extractor.parseCsvFile())
-    if args.txt_out_to_console is True or args.only_txt is True:
-        extractor.outputToConsole(extractor.parseTextFile())
+    extractor = Extractor(csv_file_path=csv_file_path,text_file_path=text_file_path,logging=logging,config=config_file)
+
+    if args.csv_out_to_console is True:
+        extractor.processCsvFile(show=True)
+    else:
+        extractor.processCsvFile()
+    if args.txt_out_to_console is True:
+        extractor.processTxtFile(show=True)
+    else:
+        extractor.processTxtFile()
     logging.info("Challenge 01 Completed")
     logging.exit_log()
 

@@ -53,11 +53,12 @@ class TextFile:
 
         self._textFilePath = textFilePath
 
-    def parseTextFile(self):
+    def parseTextFile(self,show=False):
         """
         Parse the text file and yield product information as dictionaries.
         """
-        self.logging.info("Text File Parsing Started")
+        if show is True:
+            print("Extract TXT :")
         try:
             with open(self.textFilePath, 'r') as file:
                 product_info = {}
@@ -65,9 +66,11 @@ class TextFile:
                     if line.strip():
                         key, value = line.strip().split(': ')
                         product_info[key] = value
-                    else:
-                        if product_info:  # Check if product_info is not empty
-                            yield product_info
+                        if show is True:
+                            print (key,":",value)
+                    # else:
+                    #     if product_info:  # Check if product_info is not empty
+                    #         yield product_info
                 # Yield the last product_info after reaching the end of the file
                 if product_info:
                     yield product_info

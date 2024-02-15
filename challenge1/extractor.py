@@ -11,28 +11,22 @@ __name__='Extractor'
 
 class Extractor(CSV,TextFile):
 
-    def __init__(self, text_file_path=None, csv_file_path=None,logging=None,config=None,fileType=None):
+    def __init__(self, text_file_path=None, csv_file_path=None,logging=None,config=None):
         self.logging = logging
         self.config = config
 
-        self.fileType =fileType
-        if self.fileType is not None:
-            if fileType.lower() =="csv":
-                CSV.__init__(self,csv_file_path,self.logging,config=self.config)
-            elif self.fileType.lower() =="txt":
-                TextFile.__init__(self,text_file_path,self.logging)
-        else:
+        if csv_file_path:
             CSV.__init__(self, csv_file_path, self.logging, config=self.config)
-            TextFile.__init__(self, text_file_path, self.logging)
+        if text_file_path:
+            TextFile.__init__(self, text_file_path, self.logging,)
 
-    def outputToConsole(self, products,filType =None):
+    def outputToConsole(self, products,show=False):
         """
         Output product information to the console.
         """
-
         self.logging.info("Extracted products:")
         for product in products:
-            self.logging.info(product)
+            print(product)
         self.logging.info("Extraction Completed")
 
     def saveToFile(self, data,output_file):
@@ -46,23 +40,25 @@ class Extractor(CSV,TextFile):
                 json.dump((item), file, indent=4)
         self.logging.info("Dumping to file completed:")
 
-    def combinedRun(self):
+    def processCsvFile(self,show=False):
         """
         Parse and Extract Data
-        :param product:s
+        :param product:
         :return:
         """
-        if self.fileType.lower() == "csv":
-            csv_file = self.parseCsvFile()
-            self.saveToFile(csv_file, self.csvfileName)
-        elif self.fileType.lower() == "txt":
-            txt_file = self.parseTextFile()
-            self.saveToFile(txt_file,self.txtfileName)
-        else:
-            csv_file = self.parseCsvFile()
-            self.saveToFile(csv_file, self.csvfileName)
-            txt_file = self.parseTextFile()
-            self.saveToFile(txt_file, self.txtfileName)
+        #If files are coming from src
+        csv_file = self.parseCsvFile(show)
+        self.saveToFile(csv_file, self.csvfileName)
+
+    def processTxtFile(self, show=False):
+        """
+        Parse and Extract Data
+        :param product:
+        :return:
+        """
+        txt_file = self.parseTextFile(show)
+        self.saveToFile(txt_file,self.txtfileName)
+
 
 
 

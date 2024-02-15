@@ -74,14 +74,18 @@ class CSV:
         if (headers == expectedHeaders) is False:
             self.logging.error(f'CSV file {self.csvFilePath} headers mismatch {headers}',100,ex=True)
 
-    def parseCsvFile(self):
+    def parseCsvFile(self,show=False):
         """
         Parse the CSV file and yield product information as dictionaries.
         """
         try:
+            if show is True:
+                print("Extract CSV :")
             with open(self.csvFilePath, 'r', newline='') as file:
                 reader = csv.DictReader(file)
                 for row in reader:
+                    if show is True:
+                        print (row)
                     yield row
         except UnicodeDecodeError as error:
             _CommonUnicodeDecodeError(error)

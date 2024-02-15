@@ -7,18 +7,18 @@
     "status" : "active",
     "email": "admin23@yopmail.com"
     },
-  "token" : "ca8e7b59e961d89ff363aa45ab3e",
+  "token" : "ca8e7b59e961d89ff363aa45ab3ecfdce7ae67560ba14c630d7c3fa4e5e722fe",
   "baseUrl" : "https://gorest.co.in/public/v2/users",
   "putCall" : {
     "name" : "deep-52",
     "gender": "male",
     "status" : "inactive",
-    "email": "admin1@yopmail.com"
+    "email": "admin199@yopmail.com"
   },
   "patchCall" : {
     "name" : "deep-51",
     "gender": "female",
     "status" : "active",
-    "email": "admin23@yopmail.com"
+    "email": "admin200@yopmail.com"
   }
 }
