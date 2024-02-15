@@ -5,12 +5,6 @@
     PARAM --csv_file_path
     Provide text file path ortherwise it will use the staging file located on the src folders
 
-    PARAM --only_txt
-    If only txt file processing is required
-
-    PARAM --only_csv
-    If only csv file processing is required
-
     PARMA --csv_out_to_console
     Show the csv output of each line on the console
 
@@ -19,7 +13,7 @@
 
     Please note that this will create the log file in the log directory with latest date and time
 
-    Example - python main_challenge1.py --text_file_path "<>" --csv_file_path "<path>"  --only_txt --only_csv --csv_out_to_console --txt_out_to_console
+    Example - python main_challenge1.py --text_file_path "<>" --csv_file_path "<path>"  --csv_out_to_console --txt_out_to_console
 '''
 
 import argparse
