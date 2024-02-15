@@ -48,10 +48,10 @@ pip install -r requirement.txt
     PARAM --only_csv
     If only csv file processing is required
 
-    PARMA --csv_out_to_console
+    PARAM --csv_out_to_console
     Show the csv output of each line on the console
 
-    PARMA --csv_out_to_console
+    PARAM --csv_out_to_console
     Show the txt output of each line on the console
 
     Update the token manually in config file that token will be used for calling all methods and you can prepare your data to test the test cases like name token email etc.
