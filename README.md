@@ -60,7 +60,7 @@ pip install -r requirement.txt
 
 
 # Challenge -2 
-Script name - main_challenge1.py
+Script name - main_challenge2.py
 This is the data driven script. It supports all REST Methods [PUT,PATCH,DELETE,GET]
 Website https://gorest.co.in/   does not have API for refreshing or creating the tokens. Create your token from https://gorest.co.in/ and add in the config file for testing.
 This will create the log file in the log directory with latest date and time
