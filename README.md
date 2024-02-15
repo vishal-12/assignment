@@ -21,7 +21,7 @@
 
     Update the token manually in config file that token will be used for calling all methods and you can prepare your data to test the test cases like name token email etc.
 
-    Example - python main_challenge1.py --text_file_path "<>" --csv_file_path "<path>"  --only_txt --only_csv --csv_out_to_console --txt_out_to_console
+    Command - python main_challenge1.py --text_file_path "<>" --csv_file_path "<path>"  --only_txt --only_csv --csv_out_to_console --txt_out_to_console
 
 
 
@@ -30,6 +30,8 @@ Script name - main_challenge1.py
 This is the data driven script. It supports all REST Methods [PUT,PATCH,DELETE,GET]
 Website https://gorest.co.in/   does not have API for refreshing or creating the tokens. Create your token from https://gorest.co.in/ and add in the config file for testing.
 This will create the log file in the log directory with latest date and time
+
+Command - python main_challenge2.py
 
 # Challenge -3
 Once the server is up and running locally use command - python main_chanllenge3_server.py. Execute below commands for sending request from clinet to server
