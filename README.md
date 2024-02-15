@@ -1,6 +1,6 @@
 # Challenge -1
 '''
-    script name - main_challenge1.py
+    Script name - main_challenge1.py
     PARAM --text_file_path
     Provide text file path ortherwise it will use staging files located on the src folders
 
@@ -26,7 +26,7 @@
 
 
 # Challenge -2 
-script name - main_challenge1.py
+Script name - main_challenge1.py
 This is the data driven script. It supports all REST Methods [PUT,PATCH,DELETE,GET]
 Website https://gorest.co.in/   does not have API for refreshing or creating the tokens. Create your token from https://gorest.co.in/ and add in the config file for testing.
 This will create the log file in the log directory with latest date and time
