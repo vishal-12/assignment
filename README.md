@@ -33,6 +33,9 @@ This will create the log file in the log directory with latest date and time
 
 Command - python main_challenge2.py
 
+Run the test cases -
+command pytest
+
 # Challenge -3
 Once the server is up and running locally use command - python main_chanllenge3_server.py. Execute below commands for sending request from clinet to server
 
