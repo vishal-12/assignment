@@ -17,9 +17,10 @@
     PARMA --csv_out_to_console
     Show the txt output of each line on the console
 
-    Please note that this will create the log file in the log directory with latest date and time
+    Update the token manually in config file that token will be used for calling all methods and you can prepare your data to test the test cases like name token email etc.
 
     Example - python main_challenge1.py --text_file_path "<>" --csv_file_path "<path>"  --only_txt --only_csv --csv_out_to_console --txt_out_to_console
+
 '''
 
 import argparse
