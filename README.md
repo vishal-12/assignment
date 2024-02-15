@@ -1,1 +1,52 @@
-# assignment
+# Challenge -1
+'''
+    PARAM --text_file_path
+    Provide text file path ortherwise it will use tstaging files located on the src folders
+
+    PARAM --csv_file_path
+    Provide text file path ortherwise it will use the staging file located on the src folders
+
+    PARAM --only_txt
+    If only txt file processing is required
+
+    PARAM --only_csv
+    If only csv file processing is required
+
+    PARMA --csv_out_to_console
+    Show the csv output of each line on the console
+
+    PARMA --csv_out_to_console
+    Show the txt output of each line on the console
+
+    Update the token manually in config file that token will be used for calling all methods and you can prepare your data to test the test cases like name token email etc.
+
+    Example - python main_challenge1.py --text_file_path "<>" --csv_file_path "<path>"  --only_txt --only_csv --csv_out_to_console --txt_out_to_console
+
+
+
+# SECOND CHALLENGE -2 
+        This is the data driven script which will call all REST Methods [PUT,PATCH,DELETE,GET]
+        Website https://gorest.co.in/   does not have API for refreshing or creating the tokens so add token in the config file directly
+
+        This will create the log file in the log directory with latest date and time
+
+# SECOND CHALLENGE -3
+Once the server is up and running locally. Execute below commands for sending the request from clinet to server
+
+    Register User -
+    python main_challenge3_client.py --json_data '{"name": "Aman", "surname": "Sharma", "email": "aman.sharma@example.com", "phone": "1234567890"}' --task_identifier 'register'
+
+    Fetch User -
+    python main_challenge3_client.py --json_data '{"name": "Aman", "surname": "Sharma", "email": "aman.sharma@example.com", "phone": "1234567890"}' --task_identifier 'fetch'
+
+    Delete User -
+    python main_challenge3_client.py --json_data '{"name": "Aman", "surname": "Sharma", "email": "aman.sharma@example.com", "phone": "1234567890"}' --task_identifier 'delete'
+
+    PARMAS
+    name, surname, email,phone,task_identifier
+
+    Steps-
+
+        1. Run command python main_challenge3_server.py
+        2. Verify the server is up and running  for example- Server listening on 127.0.0.1:12345
+        3. Execute the four commands for interacting with the server
