@@ -1,5 +1,6 @@
 # Challenge -1
 '''
+    script name - main_challenge1.py
     PARAM --text_file_path
     Provide text file path ortherwise it will use tstaging files located on the src folders
 
@@ -24,14 +25,14 @@
 
 
 
-# SECOND CHALLENGE -2 
-        This is the data driven script which will call all REST Methods [PUT,PATCH,DELETE,GET]
-        Website https://gorest.co.in/   does not have API for refreshing or creating the tokens so add token in the config file directly
+# Challenge -2 
+script name - main_challenge1.py
+This is the data driven script. It supports all REST Methods [PUT,PATCH,DELETE,GET]
+Website https://gorest.co.in/   does not have API for refreshing or creating the tokens. Create your token from https://gorest.co.in/ and add in the config file for testing.
+This will create the log file in the log directory with latest date and time
 
-        This will create the log file in the log directory with latest date and time
-
-# SECOND CHALLENGE -3
-Once the server is up and running locally. Execute below commands for sending the request from clinet to server
+# Challenge -3
+Once the server is up and running locally use command - python main_chanllenge3_server.py. Execute below commands for sending request from clinet to server
 
     Register User -
     python main_challenge3_client.py --json_data '{"name": "Aman", "surname": "Sharma", "email": "aman.sharma@example.com", "phone": "1234567890"}' --task_identifier 'register'
