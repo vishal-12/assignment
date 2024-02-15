@@ -2,7 +2,7 @@
 '''
     script name - main_challenge1.py
     PARAM --text_file_path
-    Provide text file path ortherwise it will use tstaging files located on the src folders
+    Provide text file path ortherwise it will use staging files located on the src folders
 
     PARAM --csv_file_path
     Provide text file path ortherwise it will use the staging file located on the src folders
